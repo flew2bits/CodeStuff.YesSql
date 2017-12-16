@@ -34,20 +34,20 @@ namespace CodeStuff.YesSql
             await BuildDatabase(store);
             await CreateBlogPosts(store, userNames, tags, 500);
 
-            //Console.WriteLine("All Posts\n");
-            //await DumpAllPosts(store);
+            Console.WriteLine("All Posts\n");
+            await DumpAllPosts(store);
 
-            //Console.WriteLine("\nPosts for author Bob Jones\n");
-            //await DumpPostsForAuthor(store, "Bob Jones");
+            Console.WriteLine("\nPosts for author Bob Jones\n");
+            await DumpPostsForAuthor(store, "Bob Jones");
 
-            //Console.WriteLine("\nPosts for author Bob Jones (index data only)\n");
-            //await DumpPostsForAuthorIndexOnly(store, "Bob Jones");
+            Console.WriteLine("\nPosts for author Bob Jones (index data only)\n");
+            await DumpPostsForAuthorIndexOnly(store, "Bob Jones");
 
-            //Console.WriteLine("\nPosts for tag Foo\n");
-            //await DumpPostsForTag(store, "Foo");
+            Console.WriteLine("\nPosts for tag Foo\n");
+            await DumpPostsForTag(store, "Foo");
 
-            //Console.WriteLine("\nPosts for author Bob Jones and tag Foo\n");
-            //await DumpPostsForAuthorWithTag(store, "Bob Jones", "Foo");
+            Console.WriteLine("\nPosts for author Bob Jones and tag Foo\n");
+            await DumpPostsForAuthorWithTag(store, "Bob Jones", "Foo");
 
             Console.WriteLine("\nPosts for author Bob Jones in January, 2017\n");
             await DumpPostsForAuthorInMonth(store, "Bob Jones", "201701");
@@ -64,7 +64,7 @@ namespace CodeStuff.YesSql
 
                 builder.DropMapIndexTable(nameof(BlogPostByAuthor));
                 builder.DropMapIndexTable(nameof(BlogPostByTag));
-                //builder.DropReduceIndexTable(nameof(BlogPostByMonth));
+                builder.DropReduceIndexTable(nameof(BlogPostByMonth));
 
                 builder.DropTable(Store.DocumentTable);
                 builder.DropTable(LinearBlockIdGenerator.TableName);
