@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="YesSql.Abstractions" Version="2.0.0-beta-1106" />
+    <PackageReference Include="YesSql.Core" Version="2.0.0-beta-1106" />
+    <PackageReference Include="YesSql.Provider.SqlServer" Version="1.0.0-beta-1106" />
+  </ItemGroup>
+
+</Project>
